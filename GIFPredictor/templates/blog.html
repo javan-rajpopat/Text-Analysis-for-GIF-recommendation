@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+  </head>
+  <body>
+  <form action="{{ url_for('hello_world2') }}" method="post">
+      <center>
+          <input type="text" value="user_input" name="user_input"/>
+          <input type="submit" value="Send"/>
+      </center>
+  </form>
+  </body>
+</html>
