@@ -1,9 +1,11 @@
-<html>
+<html xmlns="http://www.w3.org/1999/html">
   <head>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
   </head>
   <body>
+  <form action="{{ url_for('score_router') }}" method="post">
+
   <br>
 <br>
 <br>
@@ -16,16 +18,18 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6" data-aos="fade-up">
+              <input type="radio" name="vehicle" value="{{ id_keeper[0] }}">
             <a class="post animsition-link" href="blog-single.html">
               <figure>
-               <img src="{{ output[0] }}" alt="Free Template" class="img-fluid">
+               <img src="{{ output.get(id_keeper[0]) }}" alt="Free Template" class="img-fluid">
               </figure>
             </a>
           </div>
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <input type="radio" name="vehicle" value="{{ id_keeper[1] }}">
             <a class="post animsition-link" href="blog-single.html">
               <figure>
-                 <img src="http://webarchive.loc.gov/all/20150318155641/http://media.giphy.com/media/1000eGIbYHercI/giphy.gif" alt="Free Template" class="img-fluid">
+                 <img src="{{ output.get(id_keeper[1]) }}"alt="Free Template" class="img-fluid">
               </figure>
 
             </a>
@@ -35,19 +39,20 @@
 
         <div class="row">
           <div class="col-md-6" data-aos="fade-up">
+              <input type="radio" name="vehicle" value="{{ id_keeper[2] }}">
             <a class="post animsition-link" href="blog-single.html">
               <figure>
-                <img src="{{ output[1] }}" alt="Free Template" class="img-fluid">
+                <img src="{{ output.get(id_keeper[2]) }}" alt="Free Template" class="img-fluid">
               </figure>
 
             </a>
           </div>
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <input type="radio" name="vehicle" value="{{ id_keeper[3] }}">
             <a class="post animsition-link" href="blog-single.html">
               <figure>
-                <img src="http://webarchive.loc.gov/all/20150318155641/http://media.giphy.com/media/1000eGIbYHercI/giphy.gif" alt="Free Template" class="img-fluid">
+                <img src="{{ output.get(id_keeper[3]) }}" alt="Free Template" class="img-fluid">
               </figure>
-
             </a>
           </div>
         </div>
@@ -55,18 +60,57 @@
 
         <div class="row">
           <div class="col-md-6" data-aos="fade-up">
+              <input type="radio" name="vehicle" value="{{ id_keeper[4] }}">
             <a class="post animsition-link" href="blog-single.html">
               <figure>
-                <img src="http://webarchive.loc.gov/all/20150318155641/http://media.giphy.com/media/1000eGIbYHercI/giphy.gif" alt="Free Template" class="img-fluid">
+                <img src="{{ output.get(id_keeper[4]) }}" alt="Free Template" class="img-fluid">
               </figure>
             </a>
           </div>
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <input type="radio" name="vehicle" value="{{ id_keeper[5] }}">
             <a class="post animsition-link" href="blog-single.html">
               <figure>
-               <img src="http://webarchive.loc.gov/all/20150318155641/http://media.giphy.com/media/1000eGIbYHercI/giphy.gif" alt="Free Template" class="img-fluid">
+               <img src="{{ output.get(id_keeper[5]) }}" alt="Free Template" class="img-fluid">
               </figure>
+            </a>
+          </div>
+        </div>
+          <div class="row">
+          <div class="col-md-6" data-aos="fade-up">
+              <input type="radio" name="vehicle" value="{{ id_keeper[6] }}">
+            <a class="post animsition-link" href="blog-single.html">
+              <figure>
+                <img src="{{ output.get(id_keeper[6]) }}" alt="Free Template" class="img-fluid">
+              </figure>
+            </a>
+          </div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <input type="radio" name="vehicle" value="{{ id_keeper[7] }}">
+            <a class="post animsition-link" href="blog-single.html">
+              <figure>
+                    <img src="{{ output.get(id_keeper[7]) }}" alt="Free Template" class="img-fluid">
+              </figure>
+            </a>
+          </div>
+        </div>
 
+           <div class="row">
+          <div class="col-md-6" data-aos="fade-up">
+              <input type="radio" name="vehicle" value="{{ id_keeper[8] }}">
+            <a class="post animsition-link" href="blog-single.html">
+              <figure>
+                <img src="{{ output.get(id_keeper[8]) }}" alt="Free Template" class="img-fluid">
+              </figure>
+            </a>
+          </div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <input type="radio" name="vehicle" value="{{ id_keeper[9] }}">
+            <a class="post animsition-link" href="blog-single.html">
+              <figure>
+              <img src="{{ output.get(id_keeper[9]) }}" alt="Free Template" class="img-fluid">
+
+              </figure>
             </a>
           </div>
         </div>
@@ -75,5 +119,10 @@
     </section>
 
     </div>
+      <input type="text" name="finalGif" value="{{ gif_rows }}" hidden>
+      <input type="text" name="T" value="{{ T }}" hidden>
+      <input type="text" name="output_final_ids" value="{{ output_final_ids }}" hidden>
+      <input type="submit" name="go" value="SEND" style="background-color: #007bff"/>
+       </form>
   </body>
 </html>
